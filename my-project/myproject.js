@@ -3,11 +3,14 @@ let dataProject = []
 function addProject(event) {
     event.preventDefault()
 
+// Title
     let title = document.getElementById('input-title').value;
+    title.length >= 18 ? title = title.slice(0,18) + ' ...' : title = title
+
+// Date
     let startDate = new Date(document.getElementById('input-startDate').value);
     let endDate = new Date(document.getElementById('input-endDate').value);
 
-// Duration Date
     if (startDate > endDate){
         alert("Error Your Date")
     } else if(startDate < endDate){
@@ -19,17 +22,21 @@ function addProject(event) {
 
     console.log(distanceDay);
 
-    duration =  distanceMonth <= 0 ? distanceDay + ' hari' : distanceMonth + ' bulan  '
+    duration =  distanceMonth <= 0 ? distanceDay + ' hari' : distanceMonth + ' bulan'
 
     console.log(duration);
 
+//Description
     let description = document.getElementById('input-description').value;
-    description.length >= 200 ? description = description.slice(0,200) + ' ...' : description = description;
+    description.length >= 182 ? description = description.slice(0,182) + ' ...' : description = description;
 
+// Checkbox
     let node = document.getElementById('input-node-js').checked;
     let react = document.getElementById('input-react-js').checked;
     let angular = document.getElementById('input-angular').checked;
     let laravel = document.getElementById('input-laravel').checked;
+
+// Image Files
     let image = document.getElementById('input-image').files;
     image = URL.createObjectURL(image[0])
 
@@ -105,7 +112,7 @@ let firstProject = `
     <div class="project-content">
         <h2>
             <a href="myproject-detail.html" target="_blank">
-                Road Trip Mobile Apps
+                Road Trip Mobile
             </a>
         </h2>
         <div class="duration-project">

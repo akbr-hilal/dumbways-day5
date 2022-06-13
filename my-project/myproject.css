@@ -145,7 +145,7 @@ input, textarea, .checkmark, .project-form .project-container .file-project .inp
     height: 0;
     width: 0;
 }
-  
+
   /* Create a custom checkbox */
 .project-form .project-container .checkbox-project .input-checkbox .checkmark {
     position: absolute;
@@ -156,17 +156,17 @@ input, textarea, .checkmark, .project-form .project-container .file-project .inp
     background-color: #eee;
     border-radius: 6px;
 }
-  
+
   /* On mouse-over, add a grey background color */
 .project-form .project-container .checkbox-project .input-checkbox .container-checkbox:hover input ~ .checkmark {
     background-color: orangered;
 }
-  
+
   /* When the checkbox is checked, add a blue background */
 .project-form .project-container .checkbox-project .input-checkbox .container-checkbox input:checked ~ .checkmark {
     background-color: orangered;
 }
-  
+
   /* Create the checkmark/indicator (hidden when not checked) */
 .project-form .project-container .checkbox-project .input-checkbox .checkmark:after {
     content: "";
@@ -174,7 +174,7 @@ input, textarea, .checkmark, .project-form .project-container .file-project .inp
     display: none;
     
 }
-  
+
   /* Show the checkmark when checked */
 .project-form .project-container .checkbox-project .input-checkbox .container-checkbox input:checked ~ .checkmark:after {
     display: block;
@@ -295,6 +295,7 @@ input, textarea, .checkmark, .project-form .project-container .file-project .inp
 .project-list .project-list-item .project-content h2 a{
     text-decoration: none;
     color: black;
+    word-break: break-all;
 }
 
 .project-list .project-list-item .project-content .description-project{
