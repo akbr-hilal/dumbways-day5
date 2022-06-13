@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.project{
+    /* background-color: yellow; */
+    height: 92vh;
+}
+
+/* Project Form */
+.project-form{
+    background-color: rgb(247, 247, 247);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92vh;
+}
+
+.project-form .project-container{
+    /* background-color: gray; */
+    padding: 0px 40px;
+    width: 30%;
+}
+
+.project-form h2{
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+input, textarea, .checkmark, .project-form .project-container .file-project .input-image-group label{
+    box-shadow: 3px 3px 4px rgb(185, 185, 185);
+    border: 1px solid rgb(202, 202, 202);
+    padding: 4px 4px 4px 8px;
+}
+
+/* Input Title */
+.project-form .project-container .title-project{
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.project-form .project-container .title-project input{
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 4px; 
+}
+
+/* Input Date */
+.project-form .project-container .date-project{
+    display: flex;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.project-form .project-container .date-project .input-date-start{
+    /* background-color: aqua; */
+    padding-right: 8px;
+    width: 50%;
+}
+
+.project-form .project-container .date-project .input-date-end{
+    /* background-color: rgb(28, 65, 65); */
+    padding-left: 8px;
+    width: 50%;
+}
+
+.project-form .project-container .date-project input{
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 4px;
+}
+
+/* Input Description */
+.project-form .project-container .description-project{
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.project-form .project-container .description-project textarea{
+    margin-top: 4px;
+    width: 100%;
+    border-radius: 12px;
+    height: 100px;
+    resize: none;
+}
+
+.project-form .project-container .checkbox-project{
+    width: 100%;
+}
+
+.project-form .project-container .checkbox-project p{
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+
+/* Input Checkbox */
+.project-form .project-container .checkbox-project .input-checkbox{
+    display: flex;
+    width: 100%;
+    margin-bottom: 4px;
+}
+.project-form .project-container .checkbox-project .input-checkbox label{
+    display: block;
+    margin-bottom: px;
+}
+.project-form .project-container .checkbox-project .input-checkbox .checkbox-left{
+    /* background-color: aqua; */
+    width: 50%;
+}
+
+.project-form .project-container .checkbox-project .input-checkbox .checkbox-right{
+    /* background-color: rgb(15, 97, 97); */
+    width: 50%;
+}
+
+.project-form .project-container .checkbox-project .input-checkbox .container-checkbox {
+    display:inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: rgb(90, 90, 90);
+    font-size: 16px;
+    /* background-color: #c4c4c4; */
+}
+
+  /* Hide the browser's default checkbox */
+.project-form .project-container .checkbox-project .input-checkbox .container-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+  
+  /* Create a custom checkbox */
+.project-form .project-container .checkbox-project .input-checkbox .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 6px;
+}
+  
+  /* On mouse-over, add a grey background color */
+.project-form .project-container .checkbox-project .input-checkbox .container-checkbox:hover input ~ .checkmark {
+    background-color: orangered;
+}
+  
+  /* When the checkbox is checked, add a blue background */
+.project-form .project-container .checkbox-project .input-checkbox .container-checkbox input:checked ~ .checkmark {
+    background-color: orangered;
+}
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+.project-form .project-container .checkbox-project .input-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    
+}
+  
+  /* Show the checkmark when checked */
+.project-form .project-container .checkbox-project .input-checkbox .container-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+  /* Style the checkmark/indicator */
+.project-form .project-container .checkbox-project .input-checkbox .container-checkbox .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* Input File */
+.project-form .project-container .file-project{
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.project-form .project-container .file-project label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.project-form .project-container .file-project .input-image-group input{
+    width: 100%;
+    display: none;
+}
+
+.project-form .project-container .file-project .input-image-group label{
+    cursor: pointer;
+    padding: 0 12px 0 0;
+    border-radius: 12px;
+    background-color: white;
+}
+
+.project-form .project-container .file-project .input-image-group label p{
+    background-color: #adadad;
+    border: 1px;
+    border-radius: 12px 0 0 12px;
+    font-size: 16px;
+    padding: 6px;
+}
+
+.project-form .project-container .file-project .input-image-group label p:hover{
+    background-color: orangered;
+    color: white;
+}
+
+.project-form .project-container .btn-project{
+    text-align: right;
+}
+
+.project-form .project-container .btn-project button{
+    margin-top: 20px;
+    padding: 4px 16px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+    border-color: black;
+}
+
+.project-form .project-container .btn-project button:hover{
+    background-color: orangered;
+    border-color: orangered;
+}
+
+/* Project List */
+.title-list{
+    /* background-color: wheat; */
+    text-align: center;
+    margin: 40px 0;
+    box-sizing: border-box;
+}
+.project-list{
+    /* background-color: whitesmoke; */
+    align-items:flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* display: grid;
+    grid-template-columns: auto auto auto; 
+    gap: 20px;  */
+    margin: 0 100px;
+}
+
+.project-list .project-list-item{
+    width: 29%;
+    padding: 15px;
+    margin: 20px 28px 20px 20px;
+    border: 2px solid #dbdbdb;
+    border-radius: 12px;
+}
+
+.project-list .project-list-item .project-image{
+    flex: 1;
+}
+
+.project-list .project-list-item .project-image img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.project-list .project-list-item .project-content{
+    flex: 2;
+}
+
+.project-list .project-list-item .project-content h2 a{
+    text-decoration: none;
+    color: black;
+}
+
+.project-list .project-list-item .project-content .description-project{
+    padding: 32px 0;
+}
+
+.project-list .project-list-item .project-content .description-project p{
+    word-break: break-all;
+}
+
+.project-list .project-list-item .project-content .technologis-project{
+    margin-bottom: 12px;
+}
+
+.project-list .project-list-item .project-content .technologis-project i{
+    font-size: 24px;
+    padding-right: 12px;
+    font-weight: 500;
+}
+
+.project-list .project-list-item .project-content .btn-group{
+    margin-top: 28px;
+    display: flex;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.project-list .project-list-item .project-content .btn-group .btn-left{
+    width: 50%;
+    padding-right: 8px;
+}
+
+.project-list .project-list-item .project-content .btn-group .btn-right{
+    width: 50%;
+    padding-left: 8px;
+}
+
+.project-list .project-list-item .project-content .btn-group button{
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 6px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.project-list .project-list-item .project-content .btn-group button:hover{
+    background-color:orangered;
+     border-color: orangered;
+}
+

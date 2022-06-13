@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+
+    <!-- Style -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="contact.css">
+
+    <!-- Font Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Script -->
+    <script src="script.js"></script>
+  
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <ul class="menu">
+                <img src="../asset/img/brandred.png" alt="Logo Dumbways">
+                <li>
+                    <a href="../index.html" target="_blank">Home</a>
+                </li>
+                <li>
+                    <a href="../my-project/myproject.html" target="_blank">My Project</a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <a href="contact.html">Contact Me</a>
+        </div>
+    </nav>        
+    <div class="container-form">             
+        <form>
+            <div>
+                <h2>GET IN TOUCH</h2>
+            </div>
+            <div>
+                <label for="inputName">Name</label>
+                <input type="text" name="" id="inputName" placeholder="Your Name">
+            </div>
+    
+            <div>
+                <label for="inputEmail">Email</label>
+                <input type="email" name="" id="inputEmail" placeholder="your@domain.com">
+            </div>
+    
+            <div>
+                <label for="inputNumber">Phone Number</label>
+                <input type="number" name="" id="inputNumber" placeholder="+62 822...">
+            </div>
+    
+            <div>
+                <label for="inputSubject">Subject</label>
+                <select name="" id="inputSubject" aria-placeholder="your subject">
+                    <option value="" hidden="hidden" selected="selected">Select Subject</option>           
+                    <option value="Talk">Talk</option>
+                    <option value="Create a Project">Create a project</option>
+                    <option value="Collaboration">Collaboration</option>
+                </select>
+            </div>
+    
+            <div>
+                <label for="inputMessage">Your Message</label>
+                <textarea name="" id="inputMessage" placeholder="Your Message in 100 words"></textarea>
+            </div>
+            <div class="submit">
+                <button type="button" onclick="submitData()">Submit</button>
+            </div>
+            
+        </form>  
+    </div>    
+</body>
+</html>

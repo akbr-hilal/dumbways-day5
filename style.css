@@ -1,0 +1,185 @@
+body{
+    margin: 0;
+    /* background-color: red; */
+    font-family: 'Poppins', sans-serif;
+}
+
+nav{
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    height: 8vh;
+}
+
+nav .nav-left img{
+    width: 52px;
+}
+
+nav .nav-left{
+    display: flex;
+    padding-left: 100px;
+    flex: 50%;
+    align-items: center;
+}
+
+nav .nav-left li{
+    display: inline;
+}
+
+nav .nav-left ul{
+    display: flex;
+    align-items: center;
+}
+
+nav .nav-left img{
+    margin-right: 50px;
+}
+
+nav .nav-left ul li a{
+    color: black;
+    text-decoration: none;
+    padding: 12px;
+}
+
+nav .nav-right{
+    display: flex;
+    flex: 50%;
+    justify-content: flex-end;
+    align-items: center;  
+    padding-right: 100px; 
+}
+
+nav .nav-right a{
+    background-color: black  ;
+    color: white;
+    text-decoration: none;
+    padding:8px 20px;
+    border-radius: 12px;
+}
+
+
+nav .nav-left ul li a:hover{
+    font-weight: 600;
+    color: orangered;
+}
+
+nav .nav-right a:hover{
+    background-color: orangered ;
+    color: white;
+    text-decoration: none;
+    padding:8px 20px;
+    border-radius: 12px;
+}
+
+.container{
+    background-color: rgb(190, 190, 190);
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 100px;
+}
+
+
+.section{
+    background-color: white;
+    display: flex;
+    width: 100%;
+    box-shadow: 6px 6px 10px rgb(156, 156, 156);
+    border-radius: 12px;
+    align-items: center;
+    padding:28px 0 ;
+}
+
+.left{
+    /* background-color: aqua; */
+    flex: 60%;
+    padding-left: 80px;
+}
+
+.left h2, p{
+    text-align: justify;
+}
+
+.button{
+    display: flex;
+    /* background-color: aqua; */
+    align-items: center;
+    padding-top: 50px;
+}
+
+.button a{
+    color: black;
+    text-decoration: none;
+    padding-right: 12px;
+}
+
+.button .contact{
+    padding: 8px 24px;
+    background-color: black;
+    color: white;
+    margin-right: 24px;
+    border-radius: 32px;
+}
+
+.button .contact:hover{
+    background-color: orangered;
+}
+
+.button .download:hover{
+    font-weight: 600; 
+}
+
+.button img{
+    width: 24px;
+}
+
+.media{   
+    padding-top: 60px;
+}
+
+.media img{
+    width: 40px;
+    margin-right: 24px;
+}
+
+.fa-stack{
+    font-size: 24px;
+    vertical-align: middle;
+}
+.fa-stack:hover{
+    color: orangered;
+    /* font-size: 28px; */
+    /* margin-top: 0; */
+}
+
+i{
+    vertical-align: middle;
+}
+
+.right{
+    /* background-color: orangered; */
+    flex: 40%;
+}
+
+.right div{
+    background-color: white;
+    margin: 40px auto;
+    width: 60%;
+    text-align: center;
+    box-shadow: 6px 6px 10px rgb(185, 185, 185);
+    border-radius: 12px;
+}
+
+.right h2{
+    margin: 0;
+}
+
+.right p{
+    text-align: center;
+    margin: 0;
+    padding-bottom: 16px;
+}
+
+.right img{
+    border-radius: 12px 12px 0 0;
+}
