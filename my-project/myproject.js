@@ -1,35 +1,53 @@
 let dataProject = []
-console.log(dataProject);
 
 function addProject(event) {
     event.preventDefault()
 
-    let title = document.getElementById('input-title').value
-    let startDate = document.getElementById('input-startDate').value
-    let endDate = document.getElementById('input-endDate').value
-    let description = document.getElementById('input-description').value
-    let node = document.getElementById('input-node-js').checked
-    let react = document.getElementById('input-react-js').checked
-    let angular = document.getElementById('input-angular').checked
-    let laravel = document.getElementById('input-laravel').checked
-    let image = document.getElementById('input-image').files
+    let title = document.getElementById('input-title').value;
+    let startDate = new Date(document.getElementById('input-startDate').value);
+    let endDate = new Date(document.getElementById('input-endDate').value);
 
+// Duration Date
+    if (startDate > endDate){
+        alert("Error Your Date")
+    } else if(startDate < endDate){
+        getTime = new Date(endDate - startDate)
+    }
+
+    let distanceDay = Math.floor(getTime / (1000 * 3600 * 24))
+    let distanceMonth = Math.floor(distanceDay/31)
+
+    console.log(distanceDay);
+
+    duration =  distanceMonth <= 0 ? distanceDay + ' hari' : distanceMonth + ' bulan  '
+
+    console.log(duration);
+
+    let description = document.getElementById('input-description').value;
+    description.length >= 200 ? description = description.slice(0,200) + ' ...' : description = description;
+
+    let node = document.getElementById('input-node-js').checked;
+    let react = document.getElementById('input-react-js').checked;
+    let angular = document.getElementById('input-angular').checked;
+    let laravel = document.getElementById('input-laravel').checked;
+    let image = document.getElementById('input-image').files;
     image = URL.createObjectURL(image[0])
+
 
     let project = {
         title,
         startDate,
         endDate,
+        duration,
         description,
         node,
         react,
         angular,
         laravel,
-        image
+        image,
     }
 
     dataProject.push(project)
-    console.log(dataProject)
 
     renderProject()
 }
@@ -51,7 +69,7 @@ function renderProject() {
                         </a>
                     </h2>
                     <div class="duration-project">
-                        <p>Durasi: <span>${getTime(dataProject[i].startDate,dataProject[i].endDate)}</span></p>
+                        <p>Durasi: ${dataProject[i].duration} </p>
                     </div>
                     <div class="description-project">
                         <p>
@@ -59,10 +77,10 @@ function renderProject() {
                         </p>
                     </div>
                     <div class="technologis-project">
-                        ${dataProject[i].node?`<i class="fa-brands fa-node-js"></i>` : ""}
-                        ${dataProject[i].react?`<i class="fa-brands fa-react"></i>` : ""}
-                        ${dataProject[i].angular?`<i class="fa-brands fa-angular"></i>` : ""}
-                        ${dataProject[i].laravel?`<i class="fa-brands fa-laravel"></i>` : ""}
+                        ${dataProject[i].node ? `<i class="fa-brands fa-node-js"></i>` : ""}
+                        ${dataProject[i].react ? `<i class="fa-brands fa-react"></i>` : ""}
+                        ${dataProject[i].angular ? `<i class="fa-brands fa-angular"></i>` : ""}
+                        ${dataProject[i].laravel ? `<i class="fa-brands fa-laravel"></i>` : ""}
                     </div>
                     <div class="btn-group">
                         <div class="btn-left">
@@ -78,39 +96,6 @@ function renderProject() {
     }
 
 }
-
-function getTime(startDate, endDate){
-
-    console.log(startDate)
-    console.log(endDate)
-    
-    // Year
-    const startYear = Number(startDate.slice(0,4));
-    const endYear = Number(endDate.slice(0,4));
-    const timeDuration = (endYear - startYear) !== 0 ? (endYear - startYear) * 12 : 0
-
-    console.log(timeDuration)
-
-    // Bulan
-    if(startDate[5] == 0){
-        startDate = startDate[6]
-    } else {startDate = startDate[5] + startDate[6]}
-    if(endDate[5] == 0){
-        endDate = endDate[6]
-    }else{endDate = endDate[5] + endDate[6]};
-
-    const startMonth = Number(startDate);
-    const endMonth = Number(endDate);
-
-    const durationMonth = endMonth - startMonth + timeDuration
-
-    console.log(durationMonth)
-
-    if(durationMonth === 0) return "< 1 bulan"
-    return durationMonth + " " + "bulan"
-}
-
-
 
 let firstProject = `
 <div class="project-list-item">
