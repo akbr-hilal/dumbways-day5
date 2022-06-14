@@ -1,70 +1,71 @@
-let dataProject = []
+let dataProject = [];
 
 function addProject(event) {
-    event.preventDefault()
+  event.preventDefault();
 
-// Title
-    let title = document.getElementById('input-title').value;
-    title.length >= 18 ? title = title.slice(0,18) + ' ...' : title = title
+  // Title
+  let title = document.getElementById("input-title").value;
+  title.length >= 18 ? (title = title.slice(0, 18) + " ...") : (title = title);
 
-// Date
-    let startDate = new Date(document.getElementById('input-startDate').value);
-    let endDate = new Date(document.getElementById('input-endDate').value);
+  // Date
+  let startDate = new Date(document.getElementById("input-startDate").value);
+  let endDate = new Date(document.getElementById("input-endDate").value);
 
-    if (startDate > endDate){
-        alert("Error Your Date")
-    } else if(startDate < endDate){
-        getTime = new Date(endDate - startDate)
-    }
+  if (startDate > endDate) {
+    alert("Error Your Date");
+  } else if (startDate < endDate) {
+    getTime = new Date(endDate - startDate);
+  }
 
-    let distanceDay = Math.floor(getTime / (1000 * 3600 * 24))
-    let distanceMonth = Math.floor(distanceDay/31)
+  let distanceDay = Math.floor(getTime / (1000 * 3600 * 24));
+  let distanceMonth = Math.floor(distanceDay / 31);
 
-    console.log(distanceDay);
+  console.log(distanceDay);
 
-    duration =  distanceMonth <= 0 ? distanceDay + ' hari' : distanceMonth + ' bulan'
+  duration =
+    distanceMonth <= 0 ? distanceDay + " hari" : distanceMonth + " bulan";
 
-    console.log(duration);
+  console.log(duration);
 
-//Description
-    let description = document.getElementById('input-description').value;
-    description.length >= 182 ? description = description.slice(0,182) + ' ...' : description = description;
+  //Description
+  let description = document.getElementById("input-description").value;
+  description.length >= 182
+    ? (description = description.slice(0, 182) + " ...")
+    : (description = description);
 
-// Checkbox
-    let node = document.getElementById('input-node-js').checked;
-    let react = document.getElementById('input-react-js').checked;
-    let angular = document.getElementById('input-angular').checked;
-    let laravel = document.getElementById('input-laravel').checked;
+  // Checkbox
+  let node = document.getElementById("input-node-js").checked;
+  let react = document.getElementById("input-react-js").checked;
+  let angular = document.getElementById("input-angular").checked;
+  let laravel = document.getElementById("input-laravel").checked;
 
-// Image Files
-    let image = document.getElementById('input-image').files;
-    image = URL.createObjectURL(image[0])
+  // Image Files
+  let image = document.getElementById("input-image").files;
+  image = URL.createObjectURL(image[0]);
 
+  let project = {
+    title,
+    startDate,
+    endDate,
+    duration,
+    description,
+    node,
+    react,
+    angular,
+    laravel,
+    image,
+  };
 
-    let project = {
-        title,
-        startDate,
-        endDate,
-        duration,
-        description,
-        node,
-        react,
-        angular,
-        laravel,
-        image,
-    }
+  dataProject.push(project);
 
-    dataProject.push(project)
-
-    renderProject()
+  renderProject();
 }
 
 function renderProject() {
-    document.getElementById('listProject').innerHTML = firstProject
-    
-    for(let i = 0; i < dataProject.length; i++){
-        document.getElementById('listProject').innerHTML += 
-        `
+  document.getElementById("listProject").innerHTML = firstProject;
+
+  for (let i = 0; i < dataProject.length; i++) {
+    document.getElementById("listProject").innerHTML += `
             <div class="project-list-item">
                 <div class="project-image">
                     <img src="${dataProject[i].image}" alt="">
@@ -84,10 +85,26 @@ function renderProject() {
                         </p>
                     </div>
                     <div class="technologis-project">
-                        ${dataProject[i].node ? `<i class="fa-brands fa-node-js"></i>` : ""}
-                        ${dataProject[i].react ? `<i class="fa-brands fa-react"></i>` : ""}
-                        ${dataProject[i].angular ? `<i class="fa-brands fa-angular"></i>` : ""}
-                        ${dataProject[i].laravel ? `<i class="fa-brands fa-laravel"></i>` : ""}
+                        ${
+                          dataProject[i].node
+                            ? `<i class="fa-brands fa-node-js"></i>`
+                            : ""
+                        }
+                        ${
+                          dataProject[i].react
+                            ? `<i class="fa-brands fa-react"></i>`
+                            : ""
+                        }
+                        ${
+                          dataProject[i].angular
+                            ? `<i class="fa-brands fa-angular"></i>`
+                            : ""
+                        }
+                        ${
+                          dataProject[i].laravel
+                            ? `<i class="fa-brands fa-laravel"></i>`
+                            : ""
+                        }
                     </div>
                     <div class="btn-group">
                         <div class="btn-left">
@@ -99,9 +116,8 @@ function renderProject() {
                     </div>
                 </div>
             </div> 
-        `
-    }
-
+        `;
+  }
 }
 
 let firstProject = `
@@ -139,4 +155,4 @@ let firstProject = `
         </div>
     </div>
 </div>   
-`
+`;
