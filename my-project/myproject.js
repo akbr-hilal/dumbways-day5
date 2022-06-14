@@ -23,14 +23,14 @@ function addProject(event) {
   console.log(distanceDay);
 
   duration =
-    distanceMonth <= 0 ? distanceDay + " hari" : distanceMonth + " bulan";
+    distanceMonth <= 0 ? distanceDay + " Hari" : distanceMonth + " Bulan";
 
   console.log(duration);
 
   //Description
   let description = document.getElementById("input-description").value;
-  description.length >= 182
-    ? (description = description.slice(0, 182) + " ...")
+  description.length >= 230
+    ? (description = description.slice(0, 230) + " ...")
     : (description = description);
 
   // Checkbox
